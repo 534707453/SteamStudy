@@ -13,7 +13,7 @@
 
       <div class="store_nav_area">
         <div class="store_nav">
-          
+          <div></div>
         </div>
       </div>
     </header>
