@@ -52,7 +52,6 @@
 <script>
 export default {
     name: "Navbar",
-    mounted() {this.isActive(link)},
     methods: {
         isActive(link) {
             return window.location.href.endsWith(link);

@@ -18,7 +18,17 @@
               <a href="#">{{ store_nav_second }}</a>
             </li>
           </ul>
-          
+
+          <div class="Search">
+            <ul>
+              <li>
+                <input class="nav_inp" type="search" placeholder="搜索">
+              </li>
+              <li><img width="26px" height="26px" 
+                src="./assets/nav/search_icon_btn.png" alt=""></li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </header>
@@ -41,8 +51,24 @@ export default {
 </script>
  
 <style  lang="css">
+.Search ul li{
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+}
+.Search ul{
+  display: flex;
+  align-items: center;
+}
+.nav_inp {
+  padding: 6px 22px;
+  border-radius: 3px;
+  border: 0px;
+  outline: none;
+}
+
 .store_nav_area {
-  
+
   width: 940px;
   height: 66px;
   color: #E5E5E5;
@@ -60,9 +86,9 @@ export default {
   box-shadow: 5px 5px 3px -4px rgba(13, 13, 13, 0.8);
   display: flex;
   align-items: center;
-  background:  rgb(56,97,144);
-  background: -webkit-linear-gradient(to right, rgb(56,97,144), rgb(24,54,124));
-  background: linear-gradient(to right, rgb(56,97,144), rgb(24,54,124));
+  background: rgb(56, 97, 144);
+  background: -webkit-linear-gradient(to right, rgb(56, 97, 144), rgb(24, 54, 124));
+  background: linear-gradient(to right, rgb(56, 97, 144), rgb(24, 54, 124));
 }
 
 .store_nav li {
