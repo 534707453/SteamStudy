@@ -38,7 +38,7 @@
                         </svg>
                         <transition name="fade">
                             <ul v-if="showLanguageMenu" class="dropdown" style="position: absolute;
-    top: 35px;">
+    top: 35px;" v-click-outside="hideMenu">
                                 <li v-for="language in languages" :key="language"><a style="padding: 10px 45px;" href="">{{
                                     language }}</a></li>
                             </ul>
@@ -50,9 +50,16 @@
     </nav>
 </template>
 <script>
+import Vue from 'vue'
+import vClickOutside from 'v-click-outside'
+
+Vue.use(vClickOutside)
 export default {
     name: "Navbar",
     methods: {
+        hideMenu() {
+        this.showLanguageMenu = false;
+    },
         isActive(link) {
             return window.location.href.endsWith(link);
         },
@@ -95,12 +102,10 @@ export default {
 </script>
   
 <style lang="css">
-
-
 .active {
-    color: rgb(26,159,255);
+    color: rgb(26, 159, 255);
     text-decoration: none;
-    border-bottom: 3px solid rgb(26,159,255);
+    border-bottom: 3px solid rgb(26, 159, 255);
     padding-bottom: 2px;
 }
 
@@ -186,7 +191,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     background-color: rgb(61, 68, 80);
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 3px -4px rgba(13, 13, 13, 0.8);
     z-index: 1;
     position: absolute;
     top: 69px;
@@ -225,4 +230,5 @@ nav ul li a:hover {
 .fade-enter-active,
 .fade-leave-to {
     opacity: 0;
-}</style>
+}
+</style>

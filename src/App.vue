@@ -22,9 +22,9 @@
           <div class="Search">
             <ul>
               <li>
-                <input class="nav_inp" type="search" placeholder="搜索">
+                <input class="nav_inp" type="search" v-model="searchText" @focus="handleFocus" @blur="handleBlur" :style="{ color: isFocused ? 'white' : 'rgb(24, 58, 80)', fontStyle: isFocused ? 'normal' : 'italic'}">
               </li>
-              <li><img width="26px" height="26px" 
+              <li><img width="26px" height="28px" 
                 src="./assets/nav/search_icon_btn.png" alt=""></li>
             </ul>
           </div>
@@ -44,18 +44,48 @@ export default {
   },
   data() {
     return {
+      isFocused: false,
+      searchText: '搜索',
       nav_second: ["您的商店", "新鲜推荐", "类别", "点数商店", "新闻", "实验室"]
     }
-  }
-}
+  },
+  methods: {
+    handleFocus() {
+    this.isFocused = true;
+    this.searchText = '';
+  },
+  handleBlur() {
+    this.isFocused = false;
+    if (this.searchText === '') {
+      this.searchText = '搜索';
+    }
+  },
+}}
 </script>
  
 <style  lang="css">
+
+.Search{
+  position: relative;
+  left: 292px;
+}
 .Search ul li{
   display: inline;
   list-style-type: none;
   padding: 0;
 }
+
+.Search ul li img{
+  position: relative;
+  top: 2px;
+}
+
+.Search input{
+  background-color: rgb(49,98,130);
+  
+}
+
+      
 .Search ul{
   display: flex;
   align-items: center;
@@ -65,14 +95,14 @@ export default {
   border-radius: 3px;
   border: 0px;
   outline: none;
+  width: 190px;
 }
 
 .store_nav_area {
-
   width: 940px;
   height: 66px;
   color: #E5E5E5;
-  position: absolute;
+  position:fixed;
   top: 105px;
   left: 296px;
 }
