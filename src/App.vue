@@ -13,7 +13,12 @@
 
       <div class="store_nav_area">
         <div class="store_nav">
-          <div></div>
+          <ul>
+            <li v-for="(store_nav_second, index) in nav_second" :key="index">
+              <a href="#">{{ store_nav_second }}</a>
+            </li>
+          </ul>
+          
         </div>
       </div>
     </header>
@@ -26,26 +31,53 @@ export default {
   name: 'app',
   components: {
     Navbar
+  },
+  data() {
+    return {
+      nav_second: ["您的商店", "新鲜推荐", "类别", "点数商店", "新闻", "实验室"]
+    }
   }
 }
 </script>
  
 <style  lang="css">
 .store_nav_area {
-  background: #444343;
+  
   width: 940px;
   height: 66px;
   color: #E5E5E5;
   position: absolute;
-  top: 104px;
-  left: 292px;
+  top: 105px;
+  left: 296px;
 }
 
-.store_nav{
+.store_nav {
   width: 940px;
-  height: 33px;
-  margin-top: 27px;
-  background-color: #E5E5E5;
+  height: 35px;
+  margin-top: 29px;
+
+
+  box-shadow: 5px 5px 3px -4px rgba(13, 13, 13, 0.8);
+  display: flex;
+  align-items: center;
+  background:  rgb(56,97,144);
+  background: -webkit-linear-gradient(to right, rgb(56,97,144), rgb(24,54,124));
+  background: linear-gradient(to right, rgb(56,97,144), rgb(24,54,124));
+}
+
+.store_nav li {
+  list-style-type: none;
+  padding: 0;
+  display: inline;
+}
+
+.store_nav a {
+  text-decoration: none;
+  color: rgb(217, 217, 217);
+  font-weight: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 3px 15px;
 }
 
 .fullscreen-bg__video {

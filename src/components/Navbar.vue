@@ -52,6 +52,7 @@
 <script>
 export default {
     name: "Navbar",
+    mounted() {this.isActive(link)},
     methods: {
         isActive(link) {
             return window.location.href.endsWith(link);
@@ -82,7 +83,7 @@ export default {
             community: ['主页', '讨论', '创意工坊', '市场', '实况直播'],
             languages: ['繁體中文(繁體中文)', '日本語(日语)', '한국어(韩语)', 'English(英语)', 'แบบไทย(泰语)', 'български(保加利亚语)', 'čeština(捷克语)', 'Dansk(丹麦语)', 'Deutsch(德语)', 'español(西班牙语)', 'Ελληνικά(希腊语)', 'Français(法语)', 'Italiano(意大利语)', 'Magyar(匈牙语)', 'Nederlands(荷兰语)', 'norsk(挪威语)', 'svenska(瑞典语)', 'русский язык(俄语)', 'Română(罗马西亚语)', 'suomi(芬兰语)', 'svenska(svenska)', 'Türkçe(土耳其语)', 'Tiếng Việt(越南语)', 'Українська(乌克兰语)'],
             menuItems: [
-                { name: '商店', link: '/#' },
+                { name: '商店', link: '/' },
                 { name: '社区', link: '/community' },
                 { name: '关于', link: '/about' },
                 { name: '客服', link: '/server' },
