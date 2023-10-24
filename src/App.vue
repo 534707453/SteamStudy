@@ -18,17 +18,17 @@
               <a href="#">{{ store_nav_second }}</a>
             </li>
           </ul>
-
-          <div class="Search">
-            <ul>
-              <li>
-                <input class="nav_inp" type="search" v-model="searchText" @focus="handleFocus" @blur="handleBlur" :style="{ color: isFocused ? 'white' : 'rgb(24, 58, 80)', fontStyle: isFocused ? 'normal' : 'italic'}">
-              </li>
-              <li><img width="26px" height="28px" 
-                src="./assets/nav/search_icon_btn.png" alt=""></li>
-            </ul>
+          <div class="box">
+            <div class="Search">
+              <ul>
+                <li>
+                  <input class="nav_inp" type="search" v-model="searchText" @focus="handleFocus" @blur="handleBlur"
+                    :style="{ color: isFocused ? 'white' : 'rgb(24, 58, 80)', fontStyle: isFocused ? 'normal' : 'italic' }">
+                </li>
+                <li><img width="26px" height="28px" src="./assets/nav/search_icon_btn.png" alt=""></li>
+              </ul>
+            </div>
           </div>
-
         </div>
       </div>
     </header>
@@ -51,45 +51,47 @@ export default {
   },
   methods: {
     handleFocus() {
-    this.isFocused = true;
-    this.searchText = '';
-  },
-  handleBlur() {
-    this.isFocused = false;
-    if (this.searchText === '') {
-      this.searchText = '搜索';
-    }
-  },
-}}
+      this.isFocused = true;
+      this.searchText = '';
+    },
+    handleBlur() {
+      this.isFocused = false;
+      if (this.searchText === '') {
+        this.searchText = '搜索';
+      }
+    },
+  }
+}
 </script>
  
 <style  lang="css">
-
-.Search{
+.Search {
   position: relative;
   left: 292px;
 }
-.Search ul li{
+
+.Search ul li {
   display: inline;
   list-style-type: none;
   padding: 0;
 }
 
-.Search ul li img{
+.Search ul li img {
   position: relative;
   top: 2px;
 }
 
-.Search input{
-  background-color: rgb(49,98,130);
-  
+.Search input {
+  background-color: rgb(49, 98, 130);
+
 }
 
-      
-.Search ul{
+
+.Search ul {
   display: flex;
   align-items: center;
 }
+
 .nav_inp {
   padding: 6px 22px;
   border-radius: 3px;
@@ -102,7 +104,7 @@ export default {
   width: 940px;
   height: 66px;
   color: #E5E5E5;
-  position:fixed;
+  position: absolute;
   top: 105px;
   left: 296px;
 }
