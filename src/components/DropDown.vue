@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown">
         <ul>
-            <li><a href="">{{ title }}</a></li>
+            <li><a href="">{{}}</a></li>
         </ul>
     </div>
 </template>
