@@ -31,7 +31,12 @@
           </div>
         </div>
       </div>
+
+      <div class="mainBody">
+
+      </div>
     </header>
+    
   </div>
 </template>
  
@@ -65,6 +70,13 @@ export default {
 </script>
  
 <style  lang="css">
+.mainBody{
+  width: 100%;
+  height: 900px;
+  background: radial-gradient(circle 450px at 25% 0, rgb(24,66,82), rgb(26,42,59));
+  margin-top: -8px;
+}
+
 .Search {
   position: relative;
   left: 292px;
