@@ -33,19 +33,23 @@
       </div>
 
       <div class="mainBody">
-
+        <p style="color: rgb(255, 255, 255); font-size: 14px; position: relative; top: 95px; left: 70px;">精选和推荐</p>
+        <carousel></carousel>
       </div>
     </header>
-    
+
   </div>
 </template>
  
 <script>
+
 import Navbar from './components/Navbar'
+import carousel from './components/carousel'
 export default {
   name: 'app',
   components: {
-    Navbar
+    Navbar,
+    carousel
   },
   data() {
     return {
@@ -70,11 +74,12 @@ export default {
 </script>
  
 <style  lang="css">
-.mainBody{
+.mainBody {
   width: 100%;
   height: 900px;
-  background: radial-gradient(circle 450px at 25% 0, rgb(24,66,82), rgb(26,42,59));
+  background: radial-gradient(circle 450px at 25% 0, rgb(24, 66, 82), rgb(26, 42, 59));
   margin-top: -8px;
+  
 }
 
 .Search {
@@ -169,4 +174,5 @@ header {
   background: rgb(23, 29, 37);
   width: auto;
   height: 104px;
-}</style>
+}
+</style>
